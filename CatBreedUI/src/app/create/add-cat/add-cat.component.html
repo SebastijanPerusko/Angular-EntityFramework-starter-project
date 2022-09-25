@@ -1,1 +1,35 @@
-<p>add-cat works!</p>
+<div *ngIf="cat">
+    <p>Cat breed: {{ cat.breed }}</p>
+    <p>Cat name: {{ cat.name }}</p>
+    <p>Cat color: {{ cat.color }}</p>
+
+    <hr>
+
+    <h1>Modify cat information</h1>
+
+
+    <div>
+        <form>
+            <div class="form-group">
+                <label for="name">Cat Breed</label>
+                <input id="name" class="form-control" id="exampleFormControlInput1" value="{{ cat.breed }}" [(ngModel)]="cat.breed" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group">
+                <label for="beed">Cat Breed</label>
+                <input name="breed" class="form-control" id="exampleFormControlInput1" value="{{ cat.name }}" [(ngModel)]="cat.name" [ngModelOptions]="{standalone: true}" >
+            </div>
+
+            <div class="form-group">
+                <label for="color">Cat Color</label>
+                <input name="color" class="form-control" id="exampleFormControlInput1" value="{{ cat.color }}" [(ngModel)]="cat.color" [ngModelOptions]="{standalone: true}">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" (click)="OnSubmit(cat)">Submit</button>
+        </form>
+    
+    
+    </div>
+    
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cat } from 'src/app/model/cat-model';
+import { CatServiceService } from 'src/app/cat-service.service';
 
 @Component({
   selector: 'app-add-cat',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-cat.component.scss']
 })
 export class AddCatComponent implements OnInit {
+  cat: Cat = {id: 1, name: "", breed: "", color: ""}
 
-  constructor() { }
+
+  constructor(private catService: CatServiceService) { }
 
   ngOnInit(): void {
+
+  }
+
+  OnSubmit(cat: Cat) {
+    this.catService.addCat(cat).subscribe();
   }
 
 }

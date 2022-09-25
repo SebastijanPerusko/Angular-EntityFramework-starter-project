@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
 import { CatServiceService } from 'src/app/cat-service.service';
 import { Cat } from 'src/app/model/cat-model';
 
@@ -18,6 +18,10 @@ export class TableBreedComponent implements OnInit {
 
   getCats(): void {
     this.catService.getCats().subscribe(cats => this.cats = cats);
+  }
+
+  deleteCat(cat: Cat){
+    this.catService.deleteCat(cat).subscribe(cats => this.cats = cats);
   }
 
 }

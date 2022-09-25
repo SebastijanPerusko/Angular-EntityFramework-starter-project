@@ -10,6 +10,7 @@
         <th scope="col">Breed</th>
         <th scope="col">Color</th>
         <th scope="col">Details</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +20,8 @@
         <td>{{ cat.name }}</td>
         <td>{{ cat.breed }}</td>
         <td>{{ cat.color }}</td>
-        <td><a routerLink="/detail/{{cat.id}}">Modify</a></td>
+        <td><a routerLink="/detail/{{cat.id}}">Details</a></td>
+        <td><a class="text-danger" (click)="deleteCat(cat)">Delete</a></td>
       </tr>
       
     </tbody>

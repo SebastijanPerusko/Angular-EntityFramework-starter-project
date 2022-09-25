@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatDetailsComponent } from './cat-details/cat-details.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +10,8 @@ import { CatDetailsComponent } from './cat-details/cat-details.component';
     CatDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     CatDetailsComponent
