@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cat } from 'src/app/model/cat-model';
-import { CATS } from 'src/app/mock-data-cat';
 import { CatServiceService } from 'src/app/cat-service.service';
 
 @Component({
@@ -11,19 +10,24 @@ import { CatServiceService } from 'src/app/cat-service.service';
 })
 export class CatDetailsComponent implements OnInit {
 
-  cats: Cat[] = CATS;
+  catsArray: Cat[] = [];
   
   constructor(private activatedroute: ActivatedRoute,
     private catService: CatServiceService) { }
 
-  idCat: number = Number(this.activatedroute.snapshot.paramMap.get('id'));
-
   ngOnInit(): void {
 
-    this.catService.getCats().subscribe(cats => this.cats = cats);
-    this.cats = this.cats.filter(cats => cats.id === this.idCat);
-    console.log(this.cats);
 
+    let idCat: number = Number(this.activatedroute.snapshot.paramMap.get('id'));
+
+    this.getCats();
+    console.log(this.catsArray.length);
+    this.catsArray = this.catsArray.filter(catsArray => catsArray.id == idCat);
+
+  }
+
+  getCats() {
+    this.catService.getCats().subscribe(cats => this.catsArray = cats);
   }
 
   OnSubmit(cat: Cat) {
