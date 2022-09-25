@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { TableModule } from './table/table.module';
+import { CatDetailsModule } from './cat-details/cat-details.module';
+import { RouterModule } from '@angular/router';
+import { CreateModule } from './create/create.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    TableModule,
+    CreateModule,
+    CatDetailsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

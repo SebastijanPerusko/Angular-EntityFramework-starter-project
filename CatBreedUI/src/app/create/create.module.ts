@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddCatComponent } from './add-cat/add-cat.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -9,7 +11,8 @@ import { AddCatComponent } from './add-cat/add-cat.component';
     AddCatComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   exports: [
     AddCatComponent

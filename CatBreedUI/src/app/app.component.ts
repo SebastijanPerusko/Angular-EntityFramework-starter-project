@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TableBreedComponent } from './table/table-breed/table-breed.component';
 
 @Component({
   selector: 'app-root',

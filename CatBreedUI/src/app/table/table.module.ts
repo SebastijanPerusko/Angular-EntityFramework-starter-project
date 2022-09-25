@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableBreedComponent } from './table-breed/table-breed.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +10,8 @@ import { TableBreedComponent } from './table-breed/table-breed.component';
     TableBreedComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     TableBreedComponent
