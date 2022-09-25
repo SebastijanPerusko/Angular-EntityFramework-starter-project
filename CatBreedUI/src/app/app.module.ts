@@ -10,6 +10,7 @@ import { TableModule } from './table/table.module';
 import { CatDetailsModule } from './cat-details/cat-details.module';
 import { RouterModule } from '@angular/router';
 import { CreateModule } from './create/create.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateModule } from './create/create.module';
     TableModule,
     CreateModule,
     CatDetailsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,9 @@ export class CatDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cats = this.cats.filter((obj) => { return obj.id === this.idCat});
+    this.catService.getCats().subscribe(cats => this.cats = cats);
+    this.cats = this.cats.filter(cats => cats.id === this.idCat);
+    console.log(this.cats);
 
   }
 
